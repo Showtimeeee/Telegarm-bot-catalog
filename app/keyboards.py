@@ -5,7 +5,7 @@ from app.database.requests import get_categories
 main = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text='Каталог')],
     [KeyboardButton(text='Контакты')]
-])
+], resize_keyboard=True, input_field_placeholder='Выберите пункт ниже')
 
 
 async def categories():

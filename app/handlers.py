@@ -13,7 +13,7 @@ async def cmd_start(message: Message):
 
 @router.message(F.text == 'Каталог')
 async def catalog(message: Message):
-    await message.answer('Сделайте свой выбор из каталога', reply_markup=await kb.categories)
+    await message.answer('Сделайте свой выбор из каталога', reply_markup=await kb.categories())
 
 
 @router.callback_query(F.text.startswith('category_'))
