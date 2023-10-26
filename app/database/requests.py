@@ -6,3 +6,15 @@ async def get_categories():
     async with async_session() as session:
         res = await session.scalars(select(Category))
         return res
+
+
+async def get_products(category_id):
+    async with async_session() as session:
+        res = await session.scalars(select(Product).where(Product.category_id == category_id))
+        return res
+
+
+async def get_product(product_id) -> Product:
+    async with async_session() as session:
+        res = await session.scalar(select(Product).where(Product.id == product_id))
+        return res

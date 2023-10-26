@@ -10,7 +10,7 @@ from config import TOKEN
 async def main():
     await async_main()
 
-    bot = Bot(token=TOKEN)
+    bot = Bot(token=TOKEN, parse_mode='HTML')
     dp = Dispatcher()
     dp.include_router(router)
 
